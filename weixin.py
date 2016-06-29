@@ -24,7 +24,7 @@ class index:
     str+="magicheartman"
     str+="""]]></FromUserName>
     <CreateTime>"""
-    str+=datetime.time.microsecond.__str__()
+    str+=datetime.datetime.ctime()
     str+="""</CreateTime>
     <MsgType><![CDATA[text]]></MsgType>
     <Content><![CDATA[1111111111]]></Content>
