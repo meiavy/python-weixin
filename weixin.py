@@ -1,5 +1,5 @@
 import web
-import datetime
+import time
 urls=(
 '/','index'
 )
@@ -24,7 +24,7 @@ class index:
     str+="magicheartman"
     str+="""]]></FromUserName>
     <CreateTime>"""
-    str+=datetime.datetime.ctime()
+    str+=int(round(time.time() * 1000)).__str__()
     str+="""</CreateTime>
     <MsgType><![CDATA[text]]></MsgType>
     <Content><![CDATA[1111111111]]></Content>
