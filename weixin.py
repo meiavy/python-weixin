@@ -22,7 +22,7 @@ class index:
     str+=openid
     str+="""]]></ToUserName>
     <FromUserName><![CDATA["""
-    str+="magicheartman"
+    str+="gh_a15e2f8bae8b"
     str+="""]]></FromUserName>
     <CreateTime>"""
     str+=int(round(time.time())).__str__()
