@@ -24,7 +24,7 @@ class index:
     str+="magicheartman"
     str+="""]]></FromUserName>
     <CreateTime>"""
-    str+=int(round(time.time() * 1000)).__str__()
+    str+=int(round(time.time())).__str__()
     str+="""</CreateTime>
     <MsgType><![CDATA[text]]></MsgType>
     <Content><![CDATA[1111111111]]></Content>
