@@ -24,11 +24,12 @@ class index:
     str+="magicheartman"
     str+="""]]></FromUserName>
     <CreateTime>"""
-    str+=datetime.time.microsecond/1000;
+    str+=datetime.time.microsecond.__str__()
     str+="""</CreateTime>
     <MsgType><![CDATA[text]]></MsgType>
     <Content><![CDATA[1111111111]]></Content>
     </xml>"""
+    print str
     return str
 
 
