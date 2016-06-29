@@ -1,4 +1,5 @@
 import web
+import datetime
 urls=(
 '/','index'
 )
@@ -13,13 +14,23 @@ class index:
     return echostr
   def POST(self):
     print web.input()
+    params=web.input()
+    openid=params.openid
     str="""<xml>
-<ToUserName><![CDATA[toUser]]></ToUserName>
-<FromUserName><![CDATA[fromUser]]></FromUserName>
-        <CreateTime>12345678</CreateTime>
-        <MsgType><![CDATA[text]]></MsgType>
-        <Content><![CDATA[1]]></Content>
-        </xml>"""
+    <ToUserName><![CDATA["""
+    str+=openid
+    str+="""]]></ToUserName>
+    <FromUserName><![CDATA["""
+    str+="magicheartman"
+    str+="""]]></FromUserName>
+    <CreateTime>"""
+    str+=datetime.time.microsecond/1000;
+    str+="""</CreateTime>
+    <MsgType><![CDATA[text]]></MsgType>
+    <Content><![CDATA[1111111111]]></Content>
+    </xml>"""
+    return str
+
 
 if __name__=="__main__":
   app.run()
