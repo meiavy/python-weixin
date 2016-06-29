@@ -14,6 +14,7 @@ class index:
     return echostr
   def POST(self):
     print web.input()
+    print web.data()
     params=web.input()
     openid=params.openid
     str="""<xml>
