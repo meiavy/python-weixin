@@ -20,12 +20,12 @@ class index:
     openid=params.openid if hasattr(params, "openid") else ""
     data=web.data()
 
-    root = xml.etree.ElementTree.XML(data).getroot()
+    root = xml.etree.ElementTree.XML(data)
 
     print root.findall("ToUserName")
     print root.findall("./ToUserName")
-    print root.findall("/xml/ToUserName")
-    print root.findall("//ToUserName")
+    #print root.findall("../xml/ToUserName")
+    #print root.findall("//ToUserName")
     #xmlRoot
 
     """<xml><ToUserName><![CDATA[gh_a15e2f8bae8b]]></ToUserName>
