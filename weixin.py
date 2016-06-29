@@ -21,38 +21,22 @@ class index:
     data=web.data()
 
     root = xml.etree.ElementTree.XML(data)
+    toUserName= root.findall("ToUserName")
+    fromUserName= root.findall("FromUserName")
 
-    print root.findall("ToUserName")
-    print root.findall("./ToUserName")
-    #print root.findall("../xml/ToUserName")
-    #print root.findall("//ToUserName")
-    #xmlRoot
-
-    """<xml><ToUserName><![CDATA[gh_a15e2f8bae8b]]></ToUserName>
-    <FromUserName><![CDATA[oJtIMsxje0-7rt0S18WH2iIhkMNU]]></FromUserName>
-    <CreateTime>1467180642</CreateTime>
+    retXml="""
+    <xml>
+    <ToUserName><![CDATA[%s]]></ToUserName>
+    <FromUserName><![CDATA[%s]]></FromUserName>
+    <CreateTime>%d</CreateTime>
     <MsgType><![CDATA[text]]></MsgType>
-    <Content><![CDATA[111dsfdsafsafasfd]]></Content>
-    <MsgId>6301492875129622501</MsgId>
-    </xml>"""
+    <Content><![CDATA[%s]]></Content>
+    </xml>
+    """
+    retXml=retXml % (fromUserName,toUserName,int(round(time.time())),"dfafdasfd")
 
-
-
-    str="""<xml>
-    <ToUserName><![CDATA["""
-    str+=openid
-    str+="""]]></ToUserName>
-    <FromUserName><![CDATA["""
-    str+="gh_a15e2f8bae8b"
-    str+="""]]></FromUserName>
-    <CreateTime>"""
-    str+=int(round(time.time())).__str__()
-    str+="""</CreateTime>
-    <MsgType><![CDATA[text]]></MsgType>
-    <Content><![CDATA[1111111111]]></Content>
-    </xml>"""
-    print str
-    return str
+    print retXml
+    return retXml
 
 
 if __name__=="__main__":
