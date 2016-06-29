@@ -23,8 +23,9 @@ class index:
     root = xml.etree.ElementTree.XML(data)
     toUserName= root.findall("ToUserName")
     fromUserName= root.findall("FromUserName")
+    content= root.findall("Content")
 
-    retXml="""
+    retXml=u"""
     <xml>
     <ToUserName><![CDATA[%s]]></ToUserName>
     <FromUserName><![CDATA[%s]]></FromUserName>
@@ -33,9 +34,9 @@ class index:
     <Content><![CDATA[%s]]></Content>
     </xml>
     """
-    retXml=retXml % (fromUserName,toUserName,int(round(time.time())),"dfafdasfd")
+    retXml=retXml % (fromUserName[0].text,toUserName[0].text,int(round(time.time())),content[0].text)
 
-    print retXml
+    print retXml.encode("utf-8")
     return retXml
 
 
